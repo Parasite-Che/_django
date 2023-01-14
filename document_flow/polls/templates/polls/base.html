@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <!-- Обязательные мета-теги -->
+    <meta charset="utf-8">
+	<meta name="author" content="Ilya Tyurin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'polls/css/style.css' %}">
+    <!-- <script src="{% static 'polls/js/script1.jss' %}"></script> -->
+</head>
+<body class="main">
+    <header class="site-header">
+
+        <form class="searching">
+            <input type="search" name="place-for-searching" placeholder="Search query">
+            <input type="submit" value="Go!">
+        </form>
+    </header>
+
+	<nav class="navigation-panel">
+        <ul class="navigation-text">
+            <li><a href="#">Домашняя страница</a></li>
+            <li><a href="#">Наша команда</a></li>
+            <li><a href="#">Проекты</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+    <main role="main" class="container">
+
+    </main>
+    <!-- Футер закреплен внизу, независимо от количества постов на странице -->
+    <footer class="footer">
+		<!--
+		<p><a href="{% url 'polls-home' %}">© Клуб Pytho</a></p>
+		-->
+	</footer>
+</body>
+</html>
