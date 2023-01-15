@@ -9,6 +9,13 @@
 
     {% load static %}
     <link rel="stylesheet" href=" {% static 'polls/css/style.css' %}">
+    <link rel="stylesheet" href=" {% static 'polls/css/popups.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/headStyle.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/mainStyle.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/navigationStyle.css' %}">
+
+    {% load crispy_forms_tags %}
+
 </head>
 <body class="body">
     <header class="site-header">
@@ -19,7 +26,7 @@
                 <input type="submit" value="Go!">
             </form>
 
-            <form class="site-header-button" action="{% url 'profile' %}">
+            <form class="site-header-button" action="#navbar-nav">
                 <input class="profile-button" type="submit" value="My profile" />
             </form>
         </ul>
@@ -36,28 +43,26 @@
     </nav>
     <main class="main">
         <div class="border"></div>
-        <div class="navbar-nav">
-            {% if user.is_authenticated %}
-            	<a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
-            	<a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
-          	{% else %}
-            	<a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
-          	{% endif %}
+        <div id="navbar-nav" class="navbar-nav">
+            <div class="navbar-nav-top">
+                <a href="" class="popup-close">X</a>
+
+                {% if user.is_authenticated %}
+            	    <h3 class="account-heading">{{ user.username }}</h3>
+                    <h4 class="text-secondary">{{ user.email }}</h4>
+          	    {% endif %}
+
+            </div>
+            <div class="navbar-nav-bot">
+                {% if user.is_authenticated %}
+            	    <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
+          	    {% else %}
+            	    <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
+          	    {% endif %}
+            </div>
         </div>
-        {% block content %}
-        {% endblock %}
 
-        <section class="documents">
-
-        </section>
-
-        <section class="my-documents">
-
-        </section>
-
-        <section class="settings">
-
-        </section>
+        {% block content %} {% endblock %}
     </main>
     <footer class="footer">
 

@@ -1,0 +1,35 @@
+.navigation-panel{
+    position: absolute;
+    width: 15%;
+    height: 95%;
+    top: 5%;
+    left: 0%;
+    background: DarkSeaGreen;
+}
+
+.navigation-text{
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    top: 0px;
+}
+/*
+.nav-url-container{
+    height: 10%;
+    width: 100%;
+    left: 0%;
+    z-index: 2;
+    background: red;
+}
+*/
+.nav-url{
+    text-decoration: none;
+    color: black;
+
+}
+
+.nav-url:hover{
+    text-decoration: underline;
+    color: blue;
+    transition: all ease 0.4s;
+}
