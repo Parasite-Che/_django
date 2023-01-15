@@ -11,25 +11,39 @@
     <link rel="stylesheet" href=" {% static 'polls/css/style.css' %}">
     <!-- <script src="{% static 'polls/js/script1.jss' %}"></script> -->
 </head>
-<body class="main">
+<body class="body">
     <header class="site-header">
-
+        <div class="border"></div>
         <form class="searching">
             <input type="search" name="place-for-searching" placeholder="Search query">
             <input type="submit" value="Go!">
+            <button class="profile-button" type="button"><img src="{% static 'polls/media/user.png' %}"></button>
         </form>
     </header>
 
 	<nav class="navigation-panel">
+        <div class="border"></div>
+
         <ul class="navigation-text">
-            <li><a href="#">Домашняя страница</a></li>
-            <li><a href="#">Наша команда</a></li>
-            <li><a href="#">Проекты</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li class="nav-url-container"><a href="#" class="nav-url">Документы</a></li>
+            <li class="nav-url-container"><a href="#" class="nav-url">Мои документы</a></li>
+            <li class="nav-url-container"><a href="#" class="nav-url">Настройки</a></li>
         </ul>
     </nav>
-    <main role="main" class="container">
+    <main class="main">
+        <div class="border"></div>
 
+        <section class="documents">
+
+        </section>
+
+        <section class="my-documents">
+
+        </section>
+
+        <section class="settings">
+
+        </section>
     </main>
     <!-- Футер закреплен внизу, независимо от количества постов на странице -->
     <footer class="footer">
