@@ -9,16 +9,20 @@
 
     {% load static %}
     <link rel="stylesheet" href=" {% static 'polls/css/style.css' %}">
-    <!-- <script src="{% static 'polls/js/script1.jss' %}"></script> -->
 </head>
 <body class="body">
     <header class="site-header">
         <div class="border"></div>
-        <form class="searching">
-            <input type="search" name="place-for-searching" placeholder="Search query">
-            <input type="submit" value="Go!">
-            <button class="profile-button" type="button"><img src="{% static 'polls/media/user.png' %}"></button>
-        </form>
+        <ul class="site-header-right">
+            <form class="searching">
+                <input type="search" name="place-for-searching" placeholder="Search query">
+                <input type="submit" value="Go!">
+            </form>
+
+            <form class="site-header-button" action="{% url 'profile' %}">
+                <input class="profile-button" type="submit" value="My profile" />
+            </form>
+        </ul>
     </header>
 
 	<nav class="navigation-panel">
@@ -32,6 +36,16 @@
     </nav>
     <main class="main">
         <div class="border"></div>
+        <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            	<a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
+            	<a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
+          	{% else %}
+            	<a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
+          	{% endif %}
+        </div>
+        {% block content %}
+        {% endblock %}
 
         <section class="documents">
 
@@ -45,11 +59,8 @@
 
         </section>
     </main>
-    <!-- Футер закреплен внизу, независимо от количества постов на странице -->
     <footer class="footer">
-		<!--
-		<p><a href="{% url 'polls-home' %}">© Клуб Pytho</a></p>
-		-->
+
 	</footer>
 </body>
 </html>
