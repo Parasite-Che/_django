@@ -7,6 +7,7 @@
     height: 10%;
     opacity: 0;
     visibility: hidden;
+    z-index: 5;
 }
 
 .navbar-nav:target{
@@ -27,6 +28,7 @@
     text-decoration: none;
     color: black;
     position: absolute;
+    font-size: 20px;
     top; 2%;
     right: 1%;
 }
@@ -85,3 +87,4 @@
 .nav-link:active{
     color: DarkRed;
 }
+

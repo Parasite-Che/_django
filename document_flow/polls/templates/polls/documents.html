@@ -5,11 +5,26 @@
     {% load static %}
     <head>
         <link rel="stylesheet" href=" {% static 'css/documents_style.css' %}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     </head>
     <body>
+        <H1 class="doc-text">Documents</H1>
+        <form class="add_docs" action="{% url 'polls-doc-cr' %}">
+            <input class="add_docs_button" type="submit" value="Add docs"/>
+        </form>
+        <!--
+        <form class="update_docs" action="">
+            <input class="add_docs_button" type="submit" value="Update docs"/>
+        </form>
+        <form class="delete_docs" action="">
+            <input class="delete_docs_button" type="submit" value="Delete docs"/>
+        </form>
+        -->
         <div class="table-area">
-            {% render_table object_list %}
+            <div class="deep-table-area">
+                {% render_table object_list %}
+            </div>
         </div>
+        {% block creating %}{% endblock %}
     </body>
+
 {% endblock %}
