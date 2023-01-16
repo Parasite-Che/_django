@@ -1,21 +1,15 @@
 {% extends "polls/base.html" %}
+{% load render_table from django_tables2 %}
 {% block content %}
 
     {% load static %}
-    <link rel="stylesheet" href=" {% static 'css/documents_style.css' %}">
-
-    <table class="table-area">
-        <tr>    <!-- ЗАГОЛОВКИ -->
-            <th>текст заголовка</th>
-            <th>текст заголовка</th>
-        </tr>
-        <tr>    <!-- ДАННЫЕ -->
-            <td>данные</td>
-            <td>данные</td>
-        </tr>
-    </table>
-
-    <div class="table">
-
-    </div>
+    <head>
+        <link rel="stylesheet" href=" {% static 'css/documents_style.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="table-area">
+            {% render_table object_list %}
+        </div>
+    </body>
 {% endblock %}

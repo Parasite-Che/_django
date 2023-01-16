@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "django_tables2",
     "polls.apps.PollsConfig",
     "users.apps.UsersConfig",
+    "main_datas",
     "crispy_forms",
     "django.contrib.admin",
     "django.contrib.auth",
