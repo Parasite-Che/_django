@@ -78,10 +78,10 @@
 }
 
 .nav-link:hover{
-    color: Salmon;
+    color: Maroon;
     transition: all ease 0.3s;
 }
 
 .nav-link:active{
-    color: Crimson;
+    color: DarkRed;
 }

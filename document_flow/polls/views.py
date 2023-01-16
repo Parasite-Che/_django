@@ -9,14 +9,22 @@ def base(request):
     })
 
 
-def home(request):
-    return render(request, 'polls/home.html', {
+@login_required(login_url='login')
+def documents(request):
+    return render(request, 'polls/documents.html', {
         'foo': 'bar',
     })
 
 
-def about(request):
-    return render(request, 'polls/about.html', {
+@login_required(login_url='login')
+def my_documents(request):
+    return render(request, 'polls/my_documents.html', {
+        'foo': 'bar',
+    })
+
+
+def settings(request):
+    return render(request, 'polls/settings.html', {
         'foo': 'bar',
     })
 

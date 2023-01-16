@@ -1,0 +1,21 @@
+{% extends "polls/base.html" %}
+{% block content %}
+
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/documents_style.css' %}">
+
+    <table class="table-area">
+        <tr>    <!-- ЗАГОЛОВКИ -->
+            <th>текст заголовка</th>
+            <th>текст заголовка</th>
+        </tr>
+        <tr>    <!-- ДАННЫЕ -->
+            <td>данные</td>
+            <td>данные</td>
+        </tr>
+    </table>
+
+    <div class="table">
+
+    </div>
+{% endblock %}

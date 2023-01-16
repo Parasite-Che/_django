@@ -10,9 +10,9 @@
     {% load static %}
     <link rel="stylesheet" href=" {% static 'polls/css/style.css' %}">
     <link rel="stylesheet" href=" {% static 'polls/css/popups.css' %}">
-    <link rel="stylesheet" href=" {% static 'css/headStyle.css' %}">
-    <link rel="stylesheet" href=" {% static 'css/mainStyle.css' %}">
-    <link rel="stylesheet" href=" {% static 'css/navigationStyle.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/head_style.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/main_style.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/navigation_style.css' %}">
 
     {% load crispy_forms_tags %}
 
@@ -27,7 +27,7 @@
             </form>
 
             <form class="site-header-button" action="#navbar-nav">
-                <input class="profile-button" type="submit" value="My profile" />
+                <input class="profile-button" type="submit" value="My profile"/>
             </form>
         </ul>
     </header>
@@ -36,9 +36,9 @@
         <div class="border"></div>
 
         <ul class="navigation-text">
-            <li class="nav-url-container"><a href="#" class="nav-url">Документы</a></li>
-            <li class="nav-url-container"><a href="#" class="nav-url">Мои документы</a></li>
-            <li class="nav-url-container"><a href="#" class="nav-url">Настройки</a></li>
+            <li class="nav-url-container"><a href="{% url 'polls-doc' %}" class="nav-url">Документы</a></li>
+            <li class="nav-url-container"><a href="{% url 'polls-myDoc' %}" class="nav-url">Мои документы</a></li>
+            <li class="nav-url-container"><a href="{% url 'polls-settings' %}" class="nav-url">Настройки</a></li>
         </ul>
     </nav>
     <main class="main">
@@ -48,7 +48,8 @@
                 <a href="" class="popup-close">X</a>
 
                 {% if user.is_authenticated %}
-            	    <h3 class="account-heading">{{ user.username }}</h3>
+                    <img class="account-img" src="">
+            	    <h3 class="account-heading"> {{ user.username }} </h3>
                     <h4 class="text-secondary">{{ user.email }}</h4>
           	    {% endif %}
 
@@ -61,7 +62,6 @@
           	    {% endif %}
             </div>
         </div>
-
         {% block content %} {% endblock %}
     </main>
     <footer class="footer">

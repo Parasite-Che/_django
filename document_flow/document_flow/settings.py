@@ -32,9 +32,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "django_tables2",
     "polls.apps.PollsConfig",
-    'users.apps.UsersConfig',
-    'crispy_forms',
+    "users.apps.UsersConfig",
+    "crispy_forms",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -136,3 +137,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = 'polls-base'
 LOGIN_URL = 'login'
 
+MEDIA_URL = "media/"
