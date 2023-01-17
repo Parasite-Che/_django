@@ -71,7 +71,9 @@ def documents_creating(request):
     return render(request, 'polls/data_form.html', {'form': form})
 
 
-class DataCreate(CreateView):
+class DataCreate(LoginRequiredMixin, CreateView):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'
     model = Data
     fields = '__all__'
 
@@ -79,12 +81,16 @@ class DataCreate(CreateView):
         return reverse('polls-doc')
 
 
-class DataUpdate(UpdateView):
+class DataUpdate(LoginRequiredMixin, UpdateView):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'
     model = Data
     fields = ['signed_by', 'message']
 
 
-class DataDelete(DeleteView):
+class DataDelete(LoginRequiredMixin, DeleteView):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'
     model = Data
     success_url = reverse_lazy('Datas')
 
